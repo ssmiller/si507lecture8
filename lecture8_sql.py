@@ -43,7 +43,7 @@ conn.commit()
 # Example query
 query = 'SELECT * FROM Tracks'
 cur.execute(query)
-for row n cur:
+for row in cur:
 	print(row)
 
 # close the database file to prevent locks
