@@ -39,12 +39,30 @@ conn.commit()
 
 # Research impact of this method on potential SQL injection attacks
 
+def runquery(q):
+	cur.execute(q)
+	for row in cur:
+		print(row)
+	print('-' * 20)
 
 # Example query
 query = 'SELECT * FROM Tracks'
-cur.execute(query)
-for row in cur:
-	print(row)
+runquery(query)
+
+query = 'SELECT title, plays FROM Tracks'
+runquery(query)
+
+query = 'SELECT title, plays FROM Tracks ORDER BY title'
+runquery(query)
+
+query = 'SELECT * FROM Tracks WHERE plays > 100'
+runquery(query)
+
+query = 'SELECT plays FROM Tracks WHERE artist = "The Ramones"'
+runquery(query)
+
+
+
 
 # close the database file to prevent locks
 conn.close()
