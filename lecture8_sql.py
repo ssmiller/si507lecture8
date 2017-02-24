@@ -1,3 +1,7 @@
+'''
+Created 2017-02-24 based on code provided by Professor Mark Newman in SI507 lecture.
+'''
+
 import sqlite3
 
 # attach to the database file
